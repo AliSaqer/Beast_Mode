@@ -41,4 +41,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function Profile()
+    {
+        //we dont need to specify the foreign key and local key if they follow the Laravel conventions
+        //foreign key is user_id and local key is id
+        //but if they are different we can specify them like this
+        return $this->hasone(Profile::class, 'user_id', 'id');
+    }
 }

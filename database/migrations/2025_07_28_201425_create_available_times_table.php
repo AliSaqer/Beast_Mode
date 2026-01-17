@@ -19,7 +19,7 @@ class CreateAvailableTimesTable extends Migration
             $table->date('date');
             $table->time('hour_from');
             $table->time('hour_to');
-            $table->boolean('status')->default(1); // 1 for available, 0 for not available
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }
